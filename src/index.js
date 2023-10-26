@@ -7,6 +7,7 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <link href='https://fonts.googleapis.com/css?family=Pattaya' rel='stylesheet'></link>
     <App />
   </React.StrictMode>
 );
