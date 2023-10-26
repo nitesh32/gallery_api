@@ -1,15 +1,38 @@
 {
   "files": {
-    "main.css": "/tars_assingment/static/css/main.073c9b0a.css",
-    "main.js": "/tars_assingment/static/js/main.eb6385ae.js",
+    "main.css": "/tars_assingment/static/css/main.057d5784.css",
+    "main.js": "/tars_assingment/static/js/main.ee986cdd.js",
     "static/js/787.a75d6fb9.chunk.js": "/tars_assingment/static/js/787.a75d6fb9.chunk.js",
+    "static/media/loader.png": "/tars_assingment/static/media/loader.34211e991607936d7801.png",
+    "static/media/poppins-devanagari-400-italic.woff": "/tars_assingment/static/media/poppins-devanagari-400-italic.08359c079f3cb3015ed5.woff",
+    "static/media/poppins-devanagari-400-normal.woff": "/tars_assingment/static/media/poppins-devanagari-400-normal.0e11b62db931f85340d4.woff",
+    "static/media/poppins-devanagari-400-italic.woff2": "/tars_assingment/static/media/poppins-devanagari-400-italic.4157d9bb9108d66d8269.woff2",
+    "static/media/poppins-devanagari-400-normal.woff2": "/tars_assingment/static/media/poppins-devanagari-400-normal.64d5f06ee726edd58ca3.woff2",
+    "static/media/montserrat-latin-400-normal.woff": "/tars_assingment/static/media/montserrat-latin-400-normal.b48c3d9a8c0a49c1c7b4.woff",
+    "static/media/montserrat-latin-ext-400-normal.woff": "/tars_assingment/static/media/montserrat-latin-ext-400-normal.cf42d14e809c6fdc0929.woff",
+    "static/media/montserrat-latin-400-normal.woff2": "/tars_assingment/static/media/montserrat-latin-400-normal.9ef09180105730e3cb92.woff2",
+    "static/media/montserrat-latin-ext-400-normal.woff2": "/tars_assingment/static/media/montserrat-latin-ext-400-normal.83d2d15dd908a3cf998f.woff2",
+    "static/media/montserrat-cyrillic-ext-400-normal.woff": "/tars_assingment/static/media/montserrat-cyrillic-ext-400-normal.183f43730b586802d1a0.woff",
+    "static/media/poppins-latin-400-italic.woff": "/tars_assingment/static/media/poppins-latin-400-italic.08cba85173043cb4dba8.woff",
+    "static/media/montserrat-cyrillic-400-normal.woff": "/tars_assingment/static/media/montserrat-cyrillic-400-normal.439a7e91c905d22b3543.woff",
+    "static/media/poppins-latin-400-normal.woff": "/tars_assingment/static/media/poppins-latin-400-normal.cda9c93f49237f11c766.woff",
+    "static/media/montserrat-cyrillic-ext-400-normal.woff2": "/tars_assingment/static/media/montserrat-cyrillic-ext-400-normal.32618c7b62b4ab3c0aff.woff2",
+    "static/media/poppins-latin-400-italic.woff2": "/tars_assingment/static/media/poppins-latin-400-italic.ed357fa1fa06a3e00d46.woff2",
+    "static/media/montserrat-cyrillic-400-normal.woff2": "/tars_assingment/static/media/montserrat-cyrillic-400-normal.4f7a9c3142f9879900c9.woff2",
+    "static/media/poppins-latin-400-normal.woff2": "/tars_assingment/static/media/poppins-latin-400-normal.405055dd680fa1dcdfa2.woff2",
+    "static/media/poppins-latin-ext-400-italic.woff": "/tars_assingment/static/media/poppins-latin-ext-400-italic.4e16b7fdbb99ff8cdc89.woff",
+    "static/media/poppins-latin-ext-400-normal.woff": "/tars_assingment/static/media/poppins-latin-ext-400-normal.8cc52669c8e8a6735699.woff",
+    "static/media/montserrat-vietnamese-400-normal.woff": "/tars_assingment/static/media/montserrat-vietnamese-400-normal.44e6450ead6330cb0b77.woff",
+    "static/media/poppins-latin-ext-400-italic.woff2": "/tars_assingment/static/media/poppins-latin-ext-400-italic.e1a411cc63cfee23efaa.woff2",
+    "static/media/poppins-latin-ext-400-normal.woff2": "/tars_assingment/static/media/poppins-latin-ext-400-normal.4f38b4331448d2313adc.woff2",
+    "static/media/montserrat-vietnamese-400-normal.woff2": "/tars_assingment/static/media/montserrat-vietnamese-400-normal.176348415471f3e062e6.woff2",
     "index.html": "/tars_assingment/index.html",
-    "main.073c9b0a.css.map": "/tars_assingment/static/css/main.073c9b0a.css.map",
-    "main.eb6385ae.js.map": "/tars_assingment/static/js/main.eb6385ae.js.map",
+    "main.057d5784.css.map": "/tars_assingment/static/css/main.057d5784.css.map",
+    "main.ee986cdd.js.map": "/tars_assingment/static/js/main.ee986cdd.js.map",
     "787.a75d6fb9.chunk.js.map": "/tars_assingment/static/js/787.a75d6fb9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.eb6385ae.js"
+    "static/css/main.057d5784.css",
+    "static/js/main.ee986cdd.js"
   ]
 }
