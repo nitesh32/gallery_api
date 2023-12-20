@@ -1,6 +1,6 @@
 {
-  "homepage": "https://gitname.github.io/tars_assingment",
-  "name": "tars_assingment",
+  "homepage": "https://gitname.github.io/gallery_api",
+  "name": "gallery_api",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
