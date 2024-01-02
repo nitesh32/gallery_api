@@ -2,6 +2,8 @@ import "./App.css";
 // import Navbarmain from './components/Navbarmain';
 import Main from "./components/Main";
 import React, { useState, useEffect } from "react";
+import Alert from "@mui/material/Alert";
+import Stack from "@mui/material/Stack";
 
 const style_dark = {
   backgroundColor: "rgb(35,35,35)",
@@ -17,16 +19,18 @@ const style_bar_dark = {
 };
 const style_bar_light = {
   backgroundColor: "rgb(249,249,249)",
+  borderRadius: "10px",
 };
 
 function App() {
+  // all states --------------------------------------------------------------------------
   const [mode, setmode] = useState("Dark");
   const [Data, setData] = useState("");
-  const [hello, sethello] = useState("");
+  const [hello, sethello] = useState("Home");
   const [place, setPlace] = useState("");
   const [search, setSearch] = useState([]);
   const [page, setPage] = useState(1);
-
+  //handeling modes --------------------------------------------------------------------------
   function handlemode() {
     if (mode === "Dark") {
       setmode("Light");
@@ -34,41 +38,40 @@ function App() {
       setmode("Dark");
     }
   }
-  // api call
+  // api call --------------------------------------------------------------------------
   const [apiUrl, setapiUrl] = useState(
-    `https://api.unsplash.com/search/photos?query={}&page=${page}&per_page=10&client_id=tmdUnO9SEc6CqG5vHJIQbYSv5EqsTXwzJ9O8TylSwrM`
+    `https://api.unsplash.com/search/photos?query={}&per_page=10&client_id=tmdUnO9SEc6CqG5vHJIQbYSv5EqsTXwzJ9O8TylSwrM`
   );
-
-  useEffect(() => {
-    fetch(apiUrl)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setData(data.results);
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
-  }, [hello]);
-
-  const handleenter = (event,pageev) => {
-    console.log(event,pageev);
+  // //dependecy on string
+  // useEffect(() => {
+  //   fetch(apiUrl)
+  //     .then((response) => {
+  //       if (!response.ok) {
+  //         throw new Error("Network response was not ok");
+  //       }
+  //       return response.json();
+  //     })
+  //     .then((data) => {
+  //       setData(data.results);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error:", error);
+  //     });
+  // }, [hello]);
+  // hadeling enter on search bar -------------------------------------------------
+  const handleenter = (event) => {
     if (event.key === "Enter") {
       sethello(event.target.value);
       setapiUrl(
-        `https://api.unsplash.com/search/photos?query=${event.target.value}&page=${page}&per_page=10&client_id=tmdUnO9SEc6CqG5vHJIQbYSv5EqsTXwzJ9O8TylSwrM`
+        `https://api.unsplash.com/search/photos?query=${event.target.value}&per_page=10&client_id=tmdUnO9SEc6CqG5vHJIQbYSv5EqsTXwzJ9O8TylSwrM`
       );
       setData("");
+      setPage(1);
       event.target.value = "";
     }
     setPlace(event.target.value);
-
   };
-
+  // handeling suggestions -----------------------------------------------------------------
   const handlesugg = (val) => {
     const ele = document.getElementById("search_text");
     ele.value = val;
@@ -85,19 +88,53 @@ function App() {
       setSearch([]);
     }
   }, [place]);
+  // handling page up and down ---------------------------------------------
+  const handlepagedown = () => {
+    var val = page;
+    if (val > 1) {
+      setPage(val - 1);
+    }
+  };
+  const handlepageup = () => {
+    var val = page;
+    setPage(val + 1);
+  };
+  // handeling page state --------------------------------------------------------------------------
+  useEffect(() => {
+    setapiUrl(
+      `https://api.unsplash.com/search/photos?query=${hello}&page=${page}&per_page=10&client_id=tmdUnO9SEc6CqG5vHJIQbYSv5EqsTXwzJ9O8TylSwrM`
+    );
 
-  const handlepagedown=()=>{
-    var val = page;
-    if(val>1)
-    setPage(val-1);
-    // handleenter(event,page);
-  }
-  const handlepageup=()=>{
-    var val = page;
-    setPage(val+1);
-    // handleenter(event,page);
-  }
-  
+    fetch(apiUrl)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setData(data.results);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  }, [page]);
+  // handeling dependency on api url ----------------------------------------------------------------
+  useEffect(() => {
+    fetch(apiUrl)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setData(data.results);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  }, [apiUrl]);
 
   return (
     <div
@@ -114,7 +151,10 @@ function App() {
           id="search_bar"
           style={mode === "Dark" ? style_bar_light : style_bar_dark}
         >
-          <div id="static_bar" style={mode === "Dark" ? style_bar_light : style_bar_dark}>
+          <div
+            id="static_bar"
+            style={mode === "Dark" ? style_bar_light : style_bar_dark}
+          >
             <div id="search_icon">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -132,7 +172,7 @@ function App() {
               placeholder="Search Images here"
               style={mode === "Dark" ? style_bar_light : style_bar_dark}
               id="search_text"
-              onKeyUp={(event) => handleenter(event,1)}
+              onKeyUp={(event) => handleenter(event, 1)}
               autoComplete="off"
             ></input>
           </div>
@@ -151,9 +191,9 @@ function App() {
         </div>
 
         <div id="buttons_action">
-          <h3 onClick={()=>handlepagedown()}>-</h3>
-          <h3 >{page}</h3>
-          <h3 onClick={()=>handlepageup()}>+</h3>
+          <h3 onClick={() => handlepagedown()}>-</h3>
+          <h3>{page}</h3>
+          <h3 onClick={() => handlepageup()}>+</h3>
         </div>
 
         <div id="mode_change">
@@ -181,6 +221,20 @@ function App() {
           </div>
         </div>
       </div>
+      <Stack
+        sx={{ width: "80%", position: "fixed", top: 95, zIndex: 2 }}
+        spacing={2}
+      >
+        <Alert
+          severity="success"
+          sx={{
+            bgcolor: mode === "Dark" ? "#cccccc" : "#4f4f4f",
+            color: mode === "Dark" ? "black" : "white",
+          }}
+        >
+          Results for : {hello ? hello : "Random_images"} ,Page no: {page}
+        </Alert>
+      </Stack>
       <Main mode={mode} data={Data} mean={hello} />
     </div>
   );

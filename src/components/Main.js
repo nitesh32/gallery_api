@@ -26,8 +26,15 @@ function Main(props) {
               <ImageListItem
                 key={index}
                 onClick={() => {
+                  if(!popup){
                   setpopup(index + 1);
                   document.getElementById("container").style.opacity = "0.2";
+                  }
+                  else{
+                    setpopup("");
+                    document.getElementById("container").style.opacity = "1";
+                  }
+                  
                 }}
               >
                 <div
@@ -80,7 +87,7 @@ function Main(props) {
       )}
 
       {popup ? (
-        <Card sx={{ maxWidth: 1000 }} id="crad_div">
+        <Card sx={{ minWidth: "30%" }} id="crad_div">
           <CardActionArea>
             <CardMedia
               component="img"
