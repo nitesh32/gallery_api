@@ -9,13 +9,24 @@ import "@fontsource/poppins/400-italic.css";
 // card imported
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
-import { Button, CardActionArea } from "@mui/material";
-import ShareIcon from "@mui/icons-material/Share";
-import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
-import Avatar from "@mui/material/Avatar";
+import { CardActionArea } from "@mui/material"; //Button,
+// import ShareIcon from "@mui/icons-material/Share";
+// import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
+// import Avatar from "@mui/material/Avatar";
+// import { saveAs } from 'file-saver'
+
 
 function Main(props) {
   const [popup, setpopup] = useState("");
+  const handledownload=(come)=>{
+    // saveAs(come, 'image.jpg')
+  const a = document.createElement('a');
+  a.setAttribute('download', 'img.png');
+  a.setAttribute('target','blank');
+  a.setAttribute('href', come);
+  a.click();
+  }
+
 
   return (
     <>
@@ -87,7 +98,7 @@ function Main(props) {
       )}
 
       {popup ? (
-        <Card sx={{ minWidth: "30%" }} id="crad_div">
+        <Card sx={{ minWidth: "360px" }} id="crad_div">
           <CardActionArea>
             <CardMedia
               component="img"
@@ -95,24 +106,24 @@ function Main(props) {
               image={props.data[popup - 1].urls.raw}
               alt="green iguana"
             />
-            <Button variant="outlined" id="buttonshare">
+            {/* <Button variant="outlined" id="buttonshare">
               {" "}
               <ShareIcon /> &nbsp;Share
-            </Button>
-            <Button variant="outlined" id="buttoninfo">
+            </Button> */}
+            {/* <div variant="outlined" id="buttoninfo">
               <HelpOutlineOutlinedIcon />
               &nbsp; info
-            </Button>
-            <Button variant="contained" id="buttondawnload" >
+            </div> */}
+            <div variant="contained" id="buttondawnload" onClick={()=>handledownload(props.data[popup - 1].links.download)}>
               Download image
-            </Button>
+            </div>
           </CardActionArea>
           <CardActionArea>
-            <Avatar
+            {/* <Avatar
               alt="Remy Sharp"
               src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb"
               sx={{ width: 56, height: 56 }}
-            />
+            /> */}
             
           </CardActionArea>
           <button
