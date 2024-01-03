@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/gallery_api/static/css/main.72e1ba18.css",
-    "main.js": "/gallery_api/static/js/main.470b5aac.js",
+    "main.css": "/gallery_api/static/css/main.4eb17ffe.css",
+    "main.js": "/gallery_api/static/js/main.4d6d0cba.js",
     "static/js/787.b2daacf7.chunk.js": "/gallery_api/static/js/787.b2daacf7.chunk.js",
     "static/media/loader.png": "/gallery_api/static/media/loader.34211e991607936d7801.png",
     "static/media/poppins-devanagari-400-italic.woff": "/gallery_api/static/media/poppins-devanagari-400-italic.08359c079f3cb3015ed5.woff",
@@ -27,12 +27,12 @@
     "static/media/poppins-latin-ext-400-normal.woff2": "/gallery_api/static/media/poppins-latin-ext-400-normal.4f38b4331448d2313adc.woff2",
     "static/media/montserrat-vietnamese-400-normal.woff2": "/gallery_api/static/media/montserrat-vietnamese-400-normal.176348415471f3e062e6.woff2",
     "index.html": "/gallery_api/index.html",
-    "main.72e1ba18.css.map": "/gallery_api/static/css/main.72e1ba18.css.map",
-    "main.470b5aac.js.map": "/gallery_api/static/js/main.470b5aac.js.map",
+    "main.4eb17ffe.css.map": "/gallery_api/static/css/main.4eb17ffe.css.map",
+    "main.4d6d0cba.js.map": "/gallery_api/static/js/main.4d6d0cba.js.map",
     "787.b2daacf7.chunk.js.map": "/gallery_api/static/js/787.b2daacf7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.72e1ba18.css",
-    "static/js/main.470b5aac.js"
+    "static/css/main.4eb17ffe.css",
+    "static/js/main.4d6d0cba.js"
   ]
 }
