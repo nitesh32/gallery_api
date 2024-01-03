@@ -82,7 +82,7 @@ function App() {
 
   useEffect(() => {
     if (place) {
-      fetch(`http://api.tvmaze.com/search/shows?q=${place}`)
+      fetch(`https://api.tvmaze.com/search/shows?q=${place}`)
         .then((res) => res.json())
         .then((data) => setSearch(data));
     } else {
